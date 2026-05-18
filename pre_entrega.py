@@ -23,9 +23,18 @@ while True:
             productos.append([nombre, categoria, precio])
     elif opcion == "2":
         for i in range(len(productos)):
-            print(f"estos son los productos {productos[i][0]}")
+            print(f"Producto {i+1}: {productos[i][0]}")
     elif opcion == "3":
-        ...
+        criterio = input("Ingrese el criterio de búsqueda (nombre o categoría): ").strip()
+        encontrado = False
+        for producto in productos:
+            if criterio in producto[0] or criterio in producto[1]:
+                print(f"Producto encontrado: {producto[0]}, \nCategoría: {producto[1]}, \nPrecio: {producto[2]}")
+                encontrado = True
+        if not encontrado:
+            print("Producto no encontrado.")
+        if not encontrado:
+            print("Producto no encontrado.")
     elif opcion == "4":
         ...
     elif opcion == "5":
