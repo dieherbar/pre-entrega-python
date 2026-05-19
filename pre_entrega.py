@@ -34,7 +34,16 @@ while True:
         if not encontrado:
             print("Producto no encontrado.")
     elif opcion == "4":
-        ...
+        borrar_elemento = input("Ingrese el nombre exacto del producto a eliminar: ").strip()
+        encontrado = False
+        for producto in productos:
+            if borrar_elemento.lower() == producto[0].lower():
+                productos.pop(productos.index(producto))
+                print(f"Producto eliminado: {producto[0]}")
+                encontrado = True
+                break
+        if not encontrado:
+            print("Producto no encontrado.")
     elif opcion == "5":
         print(productos)
         print("Gracias por usar el sistema. ¡Hasta luego!")
