@@ -28,11 +28,9 @@ while True:
         criterio = input("Ingrese el criterio de búsqueda (nombre o categoría): ").strip()
         encontrado = False
         for producto in productos:
-            if criterio in producto[0] or criterio in producto[1]:
+            if criterio.lower() in producto[0].lower() or criterio.lower() in producto[1].lower():
                 print(f"Producto encontrado: {producto[0]}, \nCategoría: {producto[1]}, \nPrecio: {producto[2]}")
                 encontrado = True
-        if not encontrado:
-            print("Producto no encontrado.")
         if not encontrado:
             print("Producto no encontrado.")
     elif opcion == "4":
