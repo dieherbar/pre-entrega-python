@@ -20,9 +20,18 @@ while True:
     opcion = input("Seleccione una opción (1-5): ")
     if opcion == "1":
         nombre = input("Ingrese nombre de producto: ").strip()
+        if nombre == "":
+            print("Error: El nombre del producto no puede estar vacío.")
+            continue
         categoria = input("Ingrese categoria de producto: ").strip()
+        if categoria == "":
+            print("Error: La categoría del producto no puede estar vacía.")
+            continue
         precio = input("Ingrese precio de producto: ").strip()
-        if nombre != "":
+        if precio == "" or int(precio) < 0:
+            print("Error: El precio del producto no puede estar vacío ni ser menor que cero.")
+            continue
+        if nombre != "" and categoria != "" and precio != "":
             productos.append([nombre, categoria, precio])
     elif opcion == "2":
         print("\n" + "-" * 60)
